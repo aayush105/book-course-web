@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap';
 function Home(){
+    useEffect(() =>{
+        document.title = "Home";
+    }, []);
     return(
         <div style={{ backgroundColor: '#343a40', padding: '20px', borderRadius: '15px' }}>
         <Container className="text-center">
