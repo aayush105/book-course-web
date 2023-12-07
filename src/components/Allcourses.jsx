@@ -36,13 +36,29 @@ function AllCourses() {
     }
   }, [isLoaded]);
 
+  function updateCourses(updatedCourse) {
+    setCourses(prevCourses => {
+        const updatedCourses = prevCourses.map(course => {
+            if (course.id === updatedCourse.id) {
+                return updatedCourse;
+            }
+            return course;
+        });
+        return updatedCourses;
+    });
+}
+
+  function deleteCourse(id) {
+    setCourses(courses.filter((course) => course.id !== id));
+  };
+
   return (
     <div>
       <h1>All Courses</h1>
       <p>List of courses are as follows:</p>
       {courses.length > 0 ? (
         courses.map((course, index) => (
-          <Course key={index} title={course.title} description={course.description} />
+          <Course key={index} course={course} id={course.id} title={course.title} description={course.description} update={updateCourses} delete={deleteCourse}/>
         ))
       ) : (
         <p>No courses</p>

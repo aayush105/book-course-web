@@ -13,13 +13,14 @@ function Home(){
                         <CardBody>
                             <CardTitle tag="h5">Course Application</CardTitle>
                             <CardText>
-                            This website helps you manage a list of books. You can add new books and delete ones you don't need. It's made using Spring Boot for the behind-the-scenes work and ReactJS for what you see and interact with on the site.
+                                This website helps you manage a list of books. You can add new books, edit existing ones, and delete ones you don't need. It's made using Spring Boot for the behind-the-scenes work and ReactJS for what you see and interact with on the site.
                             </CardText>
+
                         </CardBody>
                     </Card>
                 </Col>
             </Row>
-            <Button outline color="warning" size="sm">Start Exploring</Button>
+            <Button href="/view-course" action outline color="warning" size="sm">Start Exploring</Button>
         </Container>
     </div>
     );
